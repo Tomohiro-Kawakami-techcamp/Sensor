@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
+import android.media.MediaPlayer;
 import android.view.View;
 
 public class CircleView extends View {
@@ -21,6 +22,8 @@ public class CircleView extends View {
     private int width;
     private int height;
 
+    private MediaPlayer mpAlert;
+
     public CircleView(Context context) {
         super(context);
 
@@ -29,6 +32,7 @@ public class CircleView extends View {
 
         ball_X = 200;
         ball_Y = 200;
+
     }
 
     @Override
@@ -53,5 +57,10 @@ public class CircleView extends View {
 
         ball.setBounds(ball_X, ball_Y,ball_X + DIAMETER, ball_Y + DIAMETER);
         ball.draw(canvas);
+    }
+
+    public void update(float x, float y){
+       ball_X += x * 5;
+       ball_Y += y * 5;
     }
 }
