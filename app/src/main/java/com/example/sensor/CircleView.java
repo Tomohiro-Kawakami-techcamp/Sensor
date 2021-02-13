@@ -50,7 +50,7 @@ public class CircleView extends View {
         if((height - DIAMETER) < ball_Y){
             ball_Y = height - DIAMETER;
         }
-        
+
         ball.setBounds(ball_X, ball_Y,ball_X + DIAMETER, ball_Y + DIAMETER);
         ball.draw(canvas);
     }
